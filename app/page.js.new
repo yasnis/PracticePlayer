@@ -1,0 +1,15 @@
+'use client';
+
+import React from 'react';
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col p-4">
+      <div>
+        <h1 className="text-2xl font-bold mb-4">Practice Player</h1>
+        <p>Practice Player アプリケーションへようこそ！</p>
+        <p className="mt-4">ここにプレイヤーの機能が表示されます。</p>
+      </div>
+    </main>
+  );
+}

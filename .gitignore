@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+
+# Next.js build output
+.next/
+
+# Production build
+out/
+
+# MacOS system files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*
+
+# VSCode settings
+.vscode/
+
+# Coverage directory
+coverage/
+
+# Optional: OS trash
+.Trashes
+
+# Optional: Editor swap/backup files
+*~
+*.swp
+
+# PWA cache and service worker (if generated at build time)
+public/practiceplayer/sw.js
+public/practiceplayer/workbox-*.js
+
+# Ignore next export static files (if used)
+exported/
+
+# Ignore test output
+*.lcov
+
+# Ignore custom build artifacts
+build/
+
+# Ignore lock files if not used (uncomment if needed)
+# package-lock.json
+# yarn.lock
