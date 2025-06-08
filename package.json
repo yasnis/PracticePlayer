@@ -1,0 +1,26 @@
+{
+  "name": "practice-player",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@ducanh2912/next-pwa": "^7.0.0",
+    "wavesurfer.js": "^7.1.1",
+    "idb": "^7.1.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2",
+    "postcss": "^8.4.16",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^15.3.3"
+  }
+}

@@ -39,6 +39,63 @@ ABループや波形表示、マーカー機能など、一般的な音楽プレ
 
 ---
 
+## ディレクトリ構成
+practice-player/
+├── .gitignore
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── .eslintrc.js
+├── README.md
+├── SETUP.md
+├── public/
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── icons/
+│       ├── icon-192x192.png
+│       └── icon-512x512.png
+├── app/                      # Next.js App Router 用ルート
+│   ├── page.js               # トップページ
+│   ├── layout.js             # 共通レイアウト
+│   └── practiceplayer/       # basePath 用ディレクトリ
+│       └── page.js
+├── components/               # React コンポーネント
+│   ├── LeftSidebar.jsx
+│   ├── TrackEditor.jsx
+│   ├── PlaybackControls.jsx
+│   ├── ZoomSlider.jsx
+│   └── …                    
+├── lib/                      # WaveSurfer や IndexedDB ユーティリティ
+│   ├── wavesurfer.js
+│   └── idb.js
+├── styles/
+│   ├── globals.css
+│   └── tailwind.css
+├── docs/
+│   ├── feature-spec.md
+│   ├── tech-spec.md
+│   ├── ui-layout.md
+│   └── ui-components/
+│       ├── left-sidebar.md
+│       ├── logo.md
+│       ├── playlist-list.md
+│       ├── playlist-create-button.md
+│       ├── usage-guide-modal.md
+│       ├── track-editor.md
+│       ├── playback-controls.md
+│       ├── zoom-slider.md
+│       ├── marker-bar.md
+│       ├── track-list.md
+│       ├── file-import.md
+│       └── offline-storage.md
+├── .env.example              # 環境変数サンプル
+└── node_modules/             # Yarn install 後に生成
+
+
+
+---
+
 ## 🛠 開発状況
 
 - 現在：Phase 1 の仕様設計と技術選定を完了
