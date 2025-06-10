@@ -1,0 +1,112 @@
+/* SidePanel.module.css */
+
+.sidePanel {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidePanelContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* PCでは常に表示 */
+.sidePanel:not(.mobile) {
+  transform: translateX(0);
+}
+
+/* モバイル時の表示制御 */
+.mobile.closed {
+  transform: translateX(-100%);
+}
+
+.mobile.open {
+  transform: translateX(0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* メニューボタン - 背景なし */
+.menuButton {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ロゴアイコン */
+.logoIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 閉じる(×)アイコン */
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.closeIcon span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff; /* 黒から白に変更 */
+  top: 50%;
+  left: 0;
+  border-radius: 1px;
+}
+
+.closeIcon span:first-child {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.closeIcon span:last-child {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* 非表示（旧スタイル） */
+.hamburgerButton,
+.hamburgerIcon {
+  display: none;
+}
+
+/* オーバーレイ背景 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+/* メディアクエリでの調整 - CSSモジュールにもフォールバックとして */
+@media (min-width: 1025px) {
+  .menuButton {
+    display: none;
+  }
+}

@@ -1,0 +1,218 @@
+/* UsageGuideModal.module.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modalContent {
+  background-color: #222;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* スライドビューポート - オーバーフローを隠す */
+.slidesViewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+/* スライドコンテナ - 水平に並べたスライド */
+.slidesContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* 個別のスライドコンテンツ */
+.slideContent {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  text-align: center;
+  user-select: none; /* スワイプ操作中のテキスト選択を防止 */
+  cursor: grab; /* スワイプ可能であることを示すカーソル */
+  touch-action: pan-y; /* 水平方向のスワイプのみを有効にする */
+}
+
+.slideContent:active {
+  cursor: grabbing; /* ドラッグ中のカーソル */
+}
+
+.slideTitle {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.slideImageContainer {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  width: 80%;
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.slideDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 80%;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.slideNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding: 0 16px;
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.navButton:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navButton.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slideIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slideIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.slideIndicator.active {
+  background-color: white;
+}
+
+.modalFooter {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doNotShowLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.doNotShowLabel input {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+    padding: 16px;
+  }
+  
+  .slideDescription {
+    max-width: 100%;
+  }
+  
+  .slideTitle {
+    font-size: 1.2rem;
+  }
+  
+  .slideImageContainer {
+    height: 180px;
+  }
+  
+  .imagePlaceholder {
+    height: 180px;
+  }
+}

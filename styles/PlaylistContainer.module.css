@@ -1,0 +1,84 @@
+/* PlaylistContainer.module.css */
+.playlistListContainer {
+  margin-bottom: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlistListTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+  padding: 0 16px;
+  opacity: 0.8;
+}
+
+.playlistList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+}
+
+.playlistItem {
+  padding: 10px 16px;
+  margin: 2px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s;
+}
+
+.playlistItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 選択されたプレイリストの背景色をグレーに変更 */
+.playlistItem.selected {
+  background-color: rgba(100, 100, 100, 0.5); /* 青からグレーに変更 */
+  font-weight: 600;
+}
+
+.noPlaylists {
+  padding: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.noPlaylistsHint {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* プレイリスト作成ボタン用のコンテナ */
+.createButtonContainer {
+  padding: 0 16px;
+  margin-top: 8px;
+}
+
+/* スクロールバーのカスタマイズ */
+.playlistList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.playlistList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.playlistList::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.playlistList::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
