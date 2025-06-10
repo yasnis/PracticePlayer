@@ -44,8 +44,6 @@ const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClose }) =>
 
   // 現在のスライドインデックス
   const [currentSlide, setCurrentSlide] = useState(0);
-  // 次回から表示しない設定
-  const [doNotShowAgain, setDoNotShowAgain] = useState(false);
   
   // スワイプ処理のための状態と参照
   const touchStartX = useRef<number>(0);
@@ -217,13 +215,8 @@ const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClose }) =>
   const handleClose = useCallback(() => {
     // ドラッグ中なら中止
     cancelDrag();
-    
-    // 「次回から表示しない」が選択されていれば、その設定を保存
-    if (doNotShowAgain) {
-      localStorage.setItem('guide_shown', 'true');
-    }
     onClose();
-  }, [doNotShowAgain, onClose, cancelDrag]);
+  }, [onClose, cancelDrag]);
 
   // キーボードイベントの処理（Escキーで閉じる、矢印キーでスライド移動）
   useEffect(() => {
@@ -362,16 +355,9 @@ const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClose }) =>
           </button>
         </div>
 
-        {/* フッター（表示設定） */}
+        {/* フッター部分（「次回から表示しない」を削除） */}
         <div className={styles.modalFooter}>
-          <label className={styles.doNotShowLabel}>
-            <input
-              type="checkbox"
-              checked={doNotShowAgain}
-              onChange={() => setDoNotShowAgain(!doNotShowAgain)}
-            />
-            次回から表示しない
-          </label>
+          {/* 「次回から表示しない」チェックボックスを削除 */}
         </div>
       </div>
     </div>
