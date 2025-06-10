@@ -7,6 +7,9 @@ import ModalContainer from '../components/ui/ModalContainer';
 export const metadata = {
   title: 'Practice Player',
   description: 'A player for practicing music',
+  icons: {
+    icon: '/practiceplayer/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
